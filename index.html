@@ -598,7 +598,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
       <li class="rv"><p class="q">Si te pregunto qué <span class="hl">margen</span> tenés sobre lo que vendés…</p><p class="a">seguramente me lo sabés responder.</p></li>
       <li class="rv"><p class="q">Pero, ¿realmente sabés el margen de <span class="hl">todos</span> tus productos?</p></li>
       <li class="rv"><p class="q">¿Sabés si <span class="hl">todas</span> las operaciones respetan ese <span class="hl">margen</span>?</p></li>
-      <li class="rv"><p class="q">¿Cómo sabés que no se te escapa el precio de una publicación en 6 cuotas al precio de una en 3?</p></li>
+      <li class="rv"><p class="q">¿Cómo sabés que no se te escapa el precio de una publicación en <span class="hl">6 cuotas</span> al precio de una en <span class="hl">3 cuotas</span>?</p></li>
     </ol>
     <div class="cuotas rv" aria-label="Ejemplo: el mismo producto al mismo precio en 3 y en 6 cuotas">
       <div class="cq">
@@ -607,7 +607,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
         <div class="qln"><span>Comisión de Mercado Libre <em>22,9 %</em></span><span class="num down">− $ 9.847</span></div>
         <div class="qln"><span>Envío de Full</span><span class="num down">− $ 6.790</span></div>
         <div class="qln"><span>Impuestos</span><span class="num down">− $ 1.290</span></div>
-        <div class="qln"><span>Producto</span><span class="num down">− $ 17.405</span></div>
+        <div class="qln"><span>Costo</span><span class="num down">− $ 17.405</span></div>
         <div class="cf"><span>Te queda</span><b class="num up">$ 7.667 <small>17,8 %</small></b></div>
       </div>
       <div class="cq mal">
@@ -616,7 +616,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
         <div class="qln"><span>Comisión de Mercado Libre <em class="w">27,4 %</em></span><span class="num down">− $ 11.782</span></div>
         <div class="qln"><span>Envío de Full</span><span class="num down">− $ 6.790</span></div>
         <div class="qln"><span>Impuestos</span><span class="num down">− $ 1.290</span></div>
-        <div class="qln"><span>Producto</span><span class="num down">− $ 17.405</span></div>
+        <div class="qln"><span>Costo</span><span class="num down">− $ 17.405</span></div>
         <div class="cf"><span>Te queda</span><b class="num">$ 5.732 <small>13,3 %</small></b></div>
       </div>
       <p class="cnote">Mismo producto, mismo precio, mismo envío. La publicación en 6 cuotas deja <b class="num">$ 1.935</b> menos por venta: si vende 300 por mes, son <b class="num">$ 580.500</b> que no ves. <span class="mut">Datos de ejemplo.</span></p>
@@ -633,11 +633,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
     <ol class="dlg">
       <li class="rv"><p class="q">Si te pregunto cuánto invertís en publicidad…</p><p class="a">seguramente también lo sabés.</p></li>
       <li class="rv"><p class="q">¿Y el ROAS?</p><p class="a">Probablemente también.</p></li>
-      <li class="rv"><p class="q">Pero, ¿sabés si realmente te está haciendo ganar plata?</p></li>
+      <li class="rv"><p class="q">Pero, ¿sabés si realmente te está haciendo <span class="hl">ganar plata</span>?</p></li>
       <li class="rv"><p class="q">¿Sabés darte cuenta cuándo una publicación con publicidad es rentable y cuándo no?</p></li>
     </ol>
     <div class="rv" style="margin-top:72px">
-      <p class="sub" style="margin-top:0">El ROAS mide cuánto vendiste por cada peso de publicidad, no cuánto te quedó. De esa venta también salen la comisión, el envío, los impuestos y tu producto. Tocá un anuncio:</p>
+      <p class="sub" style="margin-top:0">El ROAS mide cuánto vendiste por cada peso de publicidad, no cuánto te quedó. De esa venta también salen la comisión, el envío, los impuestos y el costo. Tocá un anuncio:</p>
       <div class="adtiles num" id="adtiles"></div>
     </div>
     <div class="adwin rv">
@@ -647,7 +647,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
           <div class="vsc ml">
             <span class="who"><i></i>Lo que te dice Mercado Ads</span>
             <div class="big num" id="vsMl">x6,4</div>
-            <div class="what" id="vsMlTxt">de retorno</div>
+            <div class="what" id="vsMlTxt">de ROAS</div>
             <div class="lines num" id="vsMlLines"></div>
           </div>
           <div class="vsmid" aria-hidden="true"><span>vs</span></div>
@@ -661,10 +661,10 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
         <div class="veredicto" id="veredicto" role="status" aria-live="polite"></div>
         <div class="adtbl">
           <table class="tbl" aria-label="Anuncios con su ganancia y su ganancia real">
-            <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th class="mlc hs">Retorno ML</th><th class="hm">Ganancia</th><th>Ganancia real</th><th class="hs">% de la ganancia en ads</th><th>Retorno real</th></tr></thead>
+            <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th class="mlc hs">ROAS ML</th><th class="hm">Ganancia</th><th>Ganancia real</th><th class="hs">% de la ganancia en ads</th><th>ROAS real</th></tr></thead>
             <tbody id="adsecBody"></tbody>
           </table>
-          <p class="note"><b>Ganancia</b> es lo que dejaron las ventas del anuncio antes de la publicidad. <b>Ganancia real</b> es lo que quedó después. <b>Retorno real</b> es ganancia dividido publicidad: debajo de x1, el anuncio gasta más de lo que te deja.</p>
+          <p class="note"><b>Ganancia</b> es lo que dejaron las ventas del anuncio antes de la publicidad. <b>Ganancia real</b> es lo que quedó después. <b>ROAS real</b> es ganancia dividido publicidad: debajo de x1, el anuncio gasta más de lo que te deja.</p>
         </div>
       </div>
     </div>
@@ -698,7 +698,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
       <ol class="sc-steps" id="scSteps">
         <li class="on now"><span><b>Facturaste</b><small>1.120 ventas en el mes</small></span><span class="v num">$ 21.384.000</span></li>
         <li><span><b>Mercado Libre</b><small>comisión, cargo fijo, envíos e impuestos</small></span><span class="v num down">− $ 6.928.000</span></li>
-        <li><span><b>Tu mercadería</b><small>en dólares, al dólar de cada venta</small></span><span class="v num down">− $ 9.410.000</span></li>
+        <li><span><b>Costo</b><small>en dólares, al dólar de cada venta</small></span><span class="v num down">− $ 9.410.000</span></li>
         <li><span><b>Publicidad</b><small>repartida entre las ventas que generó</small></span><span class="v num down">− $ 1.180.000</span></li>
         <li class="fin"><span><b>Te quedó</b><small>18,1 % de lo que facturaste</small></span><span class="v num up">$ 3.866.000</span></li>
       </ol>
@@ -778,7 +778,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
               <div class="bands" id="bands" role="group" aria-label="Reparto de tu inversión"></div>
               <div class="alerta" id="adalerta"></div>
               <table class="tbl" aria-label="Anuncios">
-                <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th>Ganancia real</th><th class="hs">Retorno real</th></tr></thead>
+                <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th>Ganancia real</th><th class="hs">ROAS real</th></tr></thead>
                 <tbody id="abody"></tbody>
               </table>
             </section>
@@ -1108,7 +1108,7 @@ function abrir(id){
   if (c.cob) L.push(['Envío que pagó el comprador', 'entra en lo que te deposita', c.cob]);
   if (c.log) L.push(['Despacho en Full', 'por unidad', -c.log]);
   if (!c.sinCosto){
-    L.push(['Costo del producto', 'US$ ' + x.usd.toFixed(2).replace('.', ',') + ' × ' + s.u + ' al dólar de ese día ($ ' + miles(TC) + ')', -c.cost]);
+    L.push(['Costo', 'US$ ' + x.usd.toFixed(2).replace('.', ',') + ' × ' + s.u + ' al dólar de ese día ($ ' + miles(TC) + ')', -c.cost]);
     L.push(['IVA a pagar', 'sobre lo que le ganás al producto', -c.iva]);
     L.push(['Crédito de IVA de la comisión', 'lo recuperás', c.cred]);
   }
@@ -1282,7 +1282,7 @@ var sc = document.querySelector('.scrolly'), steps = document.querySelectorAll('
 var ETAPAS = [
   {t:'Facturaste en el mes', v:21384000, p:'Bajá y miralo achicarse', b:[100,0,0,0]},
   {t:'Después de Mercado Libre', v:14456000, p:'Comisión, cargo fijo, envíos e impuestos: − $ 6.928.000', b:[67.6,32.4,0,0]},
-  {t:'Después de tu mercadería', v:5046000, p:'Al dólar del día de cada venta: − $ 9.410.000', b:[23.6,32.4,44,0]},
+  {t:'Después del costo', v:5046000, p:'Al dólar del día de cada venta: − $ 9.410.000', b:[23.6,32.4,44,0]},
   {t:'Después de la publicidad', v:3866000, p:'Repartida entre las ventas que generó: − $ 1.180.000', b:[18.1,32.4,44,5.5]},
   {t:'Te quedó', v:3866000, p:'18,1 % de lo que facturaste. Ésta es tu ganancia real.', b:[18.1,32.4,44,5.5], fin:true}
 ];
@@ -1330,9 +1330,9 @@ function pintarAdsSec(){
   var rs = mal.map(function(a){ return a.f / a.pub; }), rr = mal.map(function(a){ return a.gan / a.pub; });
   document.getElementById('adtiles').innerHTML =
     '<div><small>Publicidad a pérdida, últimos 30 días</small><b class="down">' + pesos(inv) + '</b><p>invertidos en ' + mal.length + ' anuncios</p></div>' +
-    '<div><small>Lo que te hicieron perder</small><b class="down">' + pesos(perd) + '</b><p>después de pagar la publicidad</p></div>' +
-    '<div><small>Mercado Ads los muestra con</small><b style="color:#FFF08A">' + xv(Math.min.apply(null, rs)) + ' a ' + xv(Math.max.apply(null, rs)) + '</b><p>de retorno: parecen tus mejores anuncios</p></div>' +
-    '<div><small>Su retorno real</small><b class="down">' + xv(Math.min.apply(null, rr)) + ' a ' + xv(Math.max.apply(null, rr)) + '</b><p>dejan menos de lo que cuestan</p></div>';
+    '<div><small>Lo que perdiste</small><b class="down">' + pesos(perd) + '</b><p>después de pagar la publicidad</p></div>' +
+    '<div><small>Mercado Ads te muestra</small><b style="color:#FFF08A">' + xv(Math.min.apply(null, rs)) + ' a ' + xv(Math.max.apply(null, rs)) + '</b><p>de ROAS: parecen tus mejores anuncios</p></div>' +
+    '<div><small>Su ROAS real</small><b class="down">' + xv(Math.min.apply(null, rr)) + ' a ' + xv(Math.max.apply(null, rr)) + '</b><p>dejan menos de lo que cuestan</p></div>';
   var L = ADS.slice().sort(function(a, b){ return a.g - b.g; });
   document.getElementById('adsecBody').innerHTML = L.map(function(a){
     var rr = a.gan / a.pub;
@@ -1342,23 +1342,24 @@ function pintarAdsSec(){
       '<td class="hs num ' + (a.pub > a.gan ? 'down' : a.pub / a.gan > 0.3 ? 'warnc' : '') + '">' + pct(a.pub / a.gan * 100, 0) + '</td><td class="num ' + (rr < 1 ? 'down' : rr < 3 ? 'warnc' : 'up') + '"><b>' + xv(rr) + '</b></td></tr>';
   }).join('');
   var a = ADS.filter(function(x){ return x.sku === adSel; })[0];
-  var roas = a.f / a.pub, rr2 = a.gan / a.pub, ml = a.f - a.gan;
+  var roas = a.f / a.pub, rr2 = a.gan / a.pub, ml = Math.round(a.f * 0.29 / 100) * 100, costo = a.f - a.gan - ml;
   document.getElementById('vsMl').textContent = xv(roas);
-  document.getElementById('vsMlTxt').textContent = 'de retorno: por cada $ 1 de publicidad vendiste $ ' + roas.toFixed(1).replace('.', ',');
+  document.getElementById('vsMlTxt').textContent = 'de ROAS: por cada $ 1 de publicidad vendiste $ ' + roas.toFixed(1).replace('.', ',');
   document.getElementById('vsMlLines').innerHTML =
     '<div><span>' + esc(a.n) + ' · ' + a.v + ' vendidas</span><span>' + pesos(a.f) + '</span></div>' +
     '<div><span>Pusiste en publicidad</span><span>' + pesos(a.pub) + '</span></div>' +
-    '<div class="f"><span>Retorno</span><span style="color:#FFF08A">' + xv(roas) + '</span></div>';
+    '<div class="f"><span>ROAS</span><span style="color:#FFF08A">' + xv(roas) + '</span></div>';
   var vos = document.getElementById('vsVos');
   vos.textContent = pesos(a.g); vos.className = 'big num ' + (a.g < 0 ? 'down' : 'up');
   document.getElementById('vsVosBox').classList.toggle('neg', a.g < 0);
   document.getElementById('vsVosTxt').textContent = a.g < 0 ? 'de ganancia real: este anuncio te hace perder plata' : 'de ganancia real, ya sin la publicidad';
   document.getElementById('vsVosLines').innerHTML =
     '<div><span>Vendiste con el anuncio</span><span>' + pesos(a.f) + '</span></div>' +
-    '<div><span>Comisión, envíos, impuestos y tu producto</span><span class="down">' + pesos(-ml) + '</span></div>' +
+    '<div><span>Comisión, envíos e impuestos</span><span class="down">' + pesos(-ml) + '</span></div>' +
+    '<div><span>Costo</span><span class="down">' + pesos(-costo) + '</span></div>' +
     '<div><span>Ganancia de esas ventas</span><span>' + pesos(a.gan) + '</span></div>' +
     '<div><span>Publicidad</span><span class="down">' + pesos(-a.pub) + '</span></div>' +
-    '<div class="f"><span>Ganancia real · retorno real ' + xv(rr2) + '</span><span class="' + (a.g < 0 ? 'down' : 'up') + '">' + pesos(a.g) + '</span></div>';
+    '<div class="f"><span>Ganancia real · ROAS real ' + xv(rr2) + '</span><span class="' + (a.g < 0 ? 'down' : 'up') + '">' + pesos(a.g) + '</span></div>';
   var v = document.getElementById('veredicto');
   if (a.g < 0){ v.className = 'veredicto neg'; v.textContent = 'Mercado Ads lo muestra como un anuncio que rinde ' + xv(roas) + '. Pero la publicidad se llevó más de lo que te dejaron las ventas: por cada $ 100 de ganancia, gastaste $ ' + Math.round(a.pub / a.gan * 100) + '. Bajale el presupuesto o subile el precio.'; }
   else if (rr2 < 3){ v.className = 'veredicto warn'; v.textContent = 'Gana plata, pero poca: la publicidad se lleva el ' + pct(a.pub / a.gan * 100, 0) + ' de lo que deja la venta. Con un ' + xv(roas) + ' en Mercado Ads, parece mucho mejor de lo que es.'; }
