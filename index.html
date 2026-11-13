@@ -509,6 +509,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 }
 
 /* mensaje */
+section[id],#demo{scroll-margin-top:72px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hero-pad{height:0}
 .dlg{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:44px;max-width:940px}
@@ -1304,6 +1305,17 @@ function aplicar(i){
   steps.forEach(function(li, k){ li.classList.toggle('on', k <= i); li.classList.toggle('now', k === i); });
 }
 window.addEventListener('scroll', scroll2, {passive:true}); window.addEventListener('resize', scroll2); scroll2();
+
+/* ---------- enlaces internos: se desplazan con JS, así andan también dentro de una vista previa ---------- */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  var id = a.getAttribute('href').slice(1); if (!id) return;
+  a.addEventListener('click', function(e){
+    var t = document.getElementById(id); if (!t) return;
+    e.preventDefault();
+    t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+    try { history.replaceState(null, '', '#' + id); } catch (err) {}
+  });
+});
 
 /* ---------- enlaces que faltan completar ---------- */
 document.querySelectorAll('[data-falta]').forEach(function(a){
