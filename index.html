@@ -401,9 +401,11 @@ p.sub{font-size:19px;line-height:30px;color:var(--t2);margin:20px 0 0;max-width:
 .pc-l{display:block;font-size:15px;color:var(--t2);font-weight:500}
 .pc-v{font-size:34px;line-height:40px;font-weight:700;letter-spacing:-.02em;margin-top:6px}
 .pc-range{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:4px;margin:26px 0 0;background:linear-gradient(90deg,var(--cian),var(--verde)) 0/var(--p,42%) 100% no-repeat,rgba(255,255,255,.08);cursor:pointer}
-.pc-range::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--cian);box-shadow:0 0 0 6px rgba(29,216,251,.18),0 6px 18px rgba(0,0,0,.5)}
-.pc-range::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--cian);box-shadow:0 0 0 6px rgba(29,216,251,.18)}
-.pc-ticks{display:flex;justify-content:space-between;margin-top:12px;font-size:12px;color:var(--mut);font-weight:500}
+.pc-range::-webkit-slider-thumb{-webkit-appearance:none;box-sizing:border-box;width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--cian);box-shadow:0 0 0 6px rgba(29,216,251,.18),0 6px 18px rgba(0,0,0,.5)}
+.pc-range::-moz-range-thumb{box-sizing:border-box;width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--cian);box-shadow:0 0 0 6px rgba(29,216,251,.18)}
+.pc-ticks{position:relative;height:18px;margin-top:12px;font-size:12px;color:var(--mut);font-weight:500}
+.pc-ticks span{position:absolute;top:0;left:calc(13px + (100% - 26px) * var(--i) / 7);transform:translateX(-50%);white-space:nowrap;cursor:pointer}
+.pc-ticks span.on{color:var(--ink)}
 .plan .pr span{transition:opacity .2s}
 .plan .gratis{color:var(--verde)}
 .precios{margin-top:20px}
@@ -480,7 +482,9 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   .sc-num .v{font-size:56px;line-height:60px}
   .pasos,.nums,.segs,.precios{grid-template-columns:minmax(0,1fr)}
   .pcalc{padding:22px 18px 18px}.pc-v{font-size:26px;line-height:32px}
-  .pc-ticks span:nth-child(2n){visibility:hidden}
+  .pc-ticks span{visibility:hidden}
+  .pc-ticks span:first-child,.pc-ticks span:last-child,.pc-ticks span.on{visibility:visible}
+  .pc-ticks span.on + span:last-child,.pc-ticks span:first-child:has(+ .on){visibility:hidden}
   .linea{display:none}
   .nums .v{font-size:56px;line-height:60px}
   .cierre{padding:120px 0}
@@ -845,7 +849,7 @@ section[id],#demo{scroll-margin-top:72px}
         <div class="seg" role="group" aria-label="Moneda"><button type="button" aria-pressed="true" data-mon="ars">Pesos</button><button type="button" aria-pressed="false" data-mon="usd">Dólares</button></div>
       </div>
       <input type="range" class="pc-range" id="pcRange" min="0" max="7" step="1" value="3" aria-valuetext="Hasta 1.000 ventas por mes">
-      <div class="pc-ticks num" aria-hidden="true"><span>50</span><span>100</span><span>500</span><span>1.000</span><span>2.500</span><span>5.000</span><span>10.000</span><span>15.000</span></div>
+      <div class="pc-ticks num" aria-hidden="true"><span style="--i:0" data-k="0">50</span><span style="--i:1" data-k="1">100</span><span style="--i:2" data-k="2">500</span><span style="--i:3" data-k="3">1.000</span><span style="--i:4" data-k="4">2.500</span><span style="--i:5" data-k="5">5.000</span><span style="--i:6" data-k="6">10.000</span><span style="--i:7" data-k="7">15.000</span></div>
     </div>
     <div class="precios">
       <div class="plan">
@@ -1405,7 +1409,8 @@ function pintarPrecio(){
   var k = +rng.value, n = TRAMOS[k], t = 'Hasta ' + miles(n) + ' ventas';
   document.getElementById('pcVol').textContent = t;
   rng.setAttribute('aria-valuetext', t + ' por mes');
-  rng.style.setProperty('--p', (k / 7 * 100) + '%');
+  rng.style.setProperty('--p', 'calc(13px + (100% - 26px) * ' + k + ' / 7)');
+  document.querySelectorAll('.pc-ticks span').forEach(function(t, j){ t.classList.toggle('on', j === k); });
   document.getElementById('prBase').innerHTML = precio(PRECIO[mon].base[k]);
   document.getElementById('prAdv').innerHTML = precio(PRECIO[mon].adv[k]);
   var g = k === 0;
@@ -1414,6 +1419,7 @@ function pintarPrecio(){
   document.querySelectorAll('.plan .pr small').forEach(function(s){ s.style.display = g ? 'none' : ''; });
 }
 rng.addEventListener('input', pintarPrecio);
+document.querySelectorAll('.pc-ticks span').forEach(function(t){ t.addEventListener('click', function(){ rng.value = t.dataset.k; pintarPrecio(); }); });
 document.querySelectorAll('[data-mon]').forEach(function(b){
   b.addEventListener('click', function(){ mon = b.dataset.mon; document.querySelectorAll('[data-mon]').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); }); pintarPrecio(); });
 });
