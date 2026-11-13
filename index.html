@@ -515,6 +515,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 .dlg .q{margin:0;font-size:44px;line-height:52px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
 .dlg .a{margin:10px 0 0;font-size:24px;line-height:32px;color:#7E8BA3;font-weight:500}
 .dlg .hl{color:var(--cian);text-shadow:0 0 30px rgba(29,216,251,.35)}
+.cq .hl,.cnote .hl,.adtiles .hl{color:var(--cian)!important}
 .cuotas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:80px;max-width:940px}
 .cq{border:1px solid var(--line2);border-radius:20px;background:var(--panel);padding:24px 26px}
 .cq.mal{border-color:rgba(248,113,113,.35);background:linear-gradient(180deg,rgba(248,113,113,.06),var(--panel) 60%)}
@@ -608,7 +609,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
         <div class="qln"><span>Envío de Full</span><span class="num down">− $ 6.790</span></div>
         <div class="qln"><span>Impuestos</span><span class="num down">− $ 1.290</span></div>
         <div class="qln"><span>Costo</span><span class="num down">− $ 17.405</span></div>
-        <div class="cf"><span>Te queda</span><b class="num up">$ 7.667 <small>17,8 %</small></b></div>
+        <div class="cf"><span>Te queda</span><b class="num up">$ 7.667 <small class="hl">17,8 %</small></b></div>
       </div>
       <div class="cq mal">
         <span class="cqh">Termo de acero 1 L · <b>6 cuotas</b></span>
@@ -617,9 +618,9 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
         <div class="qln"><span>Envío de Full</span><span class="num down">− $ 6.790</span></div>
         <div class="qln"><span>Impuestos</span><span class="num down">− $ 1.290</span></div>
         <div class="qln"><span>Costo</span><span class="num down">− $ 17.405</span></div>
-        <div class="cf"><span>Te queda</span><b class="num">$ 5.732 <small>13,3 %</small></b></div>
+        <div class="cf"><span>Te queda</span><b class="num">$ 5.732 <small class="hl">13,3 %</small></b></div>
       </div>
-      <p class="cnote">Mismo producto, mismo precio, mismo envío. La publicación en 6 cuotas deja <b class="num">$ 1.935</b> menos por venta: si vende 300 por mes, son <b class="num">$ 580.500</b> que no ves. <span class="mut">Datos de ejemplo.</span></p>
+      <p class="cnote">Mismo producto, mismo precio, mismo envío. La publicación en 6 cuotas deja <b class="num hl">$ 1.935</b> menos por venta: si vende 300 por mes, son <b class="num hl">$ 580.500</b> que no ves. <span class="mut">Datos de ejemplo.</span></p>
     </div>
   </div>
 </section>
@@ -631,10 +632,10 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
       <h2 class="vh" id="t-ads">Preguntas sobre tu publicidad</h2>
     </div>
     <ol class="dlg">
-      <li class="rv"><p class="q">Si te pregunto cuánto invertís en publicidad…</p><p class="a">seguramente también lo sabés.</p></li>
-      <li class="rv"><p class="q">¿Y el ROAS?</p><p class="a">Probablemente también.</p></li>
+      <li class="rv"><p class="q">Si te pregunto cuánto <span class="hl">invertís</span> en publicidad…</p><p class="a">seguramente también lo sabés.</p></li>
+      <li class="rv"><p class="q">¿Y el <span class="hl">ROAS</span>?</p><p class="a">Probablemente también.</p></li>
       <li class="rv"><p class="q">Pero, ¿sabés si realmente te está haciendo <span class="hl">ganar plata</span>?</p></li>
-      <li class="rv"><p class="q">¿Sabés darte cuenta cuándo una publicación con publicidad es rentable y cuándo no?</p></li>
+      <li class="rv"><p class="q">¿Sabés darte cuenta cuándo una publicación con publicidad es <span class="hl">rentable y cuándo no</span>?</p></li>
     </ol>
     <div class="rv" style="margin-top:72px">
       <p class="sub" style="margin-top:0">El ROAS mide cuánto vendiste por cada peso de publicidad, no cuánto te quedó. De esa venta también salen la comisión, el envío, los impuestos y el costo. Tocá un anuncio:</p>
@@ -1329,10 +1330,10 @@ function pintarAdsSec(){
   var inv = mal.reduce(function(t, a){ return t + a.pub; }, 0), perd = mal.reduce(function(t, a){ return t + a.g; }, 0);
   var rs = mal.map(function(a){ return a.f / a.pub; }), rr = mal.map(function(a){ return a.gan / a.pub; });
   document.getElementById('adtiles').innerHTML =
-    '<div><small>Publicidad a pérdida, últimos 30 días</small><b class="down">' + pesos(inv) + '</b><p>invertidos en ' + mal.length + ' anuncios</p></div>' +
+    '<div><small>Inversión en publicidad que fue a pérdida</small><b class="down">' + pesos(inv) + '</b><p>en ' + mal.length + ' anuncios, últimos 30 días</p></div>' +
     '<div><small>Lo que perdiste</small><b class="down">' + pesos(perd) + '</b><p>después de pagar la publicidad</p></div>' +
     '<div><small>Mercado Ads te muestra</small><b style="color:#FFF08A">' + xv(Math.min.apply(null, rs)) + ' a ' + xv(Math.max.apply(null, rs)) + '</b><p>de ROAS: parecen tus mejores anuncios</p></div>' +
-    '<div><small>Su ROAS real</small><b class="down">' + xv(Math.min.apply(null, rr)) + ' a ' + xv(Math.max.apply(null, rr)) + '</b><p>dejan menos de lo que cuestan</p></div>';
+    '<div><small class="hl">ROAS real (ganancia sobre inversión)</small><b class="down">' + xv(Math.min.apply(null, rr)) + ' a ' + xv(Math.max.apply(null, rr)) + '</b><p>dejan menos de lo que cuestan</p></div>';
   var L = ADS.slice().sort(function(a, b){ return a.g - b.g; });
   document.getElementById('adsecBody').innerHTML = L.map(function(a){
     var rr = a.gan / a.pub;
