@@ -507,6 +507,47 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   h1.big .w,.hero p.lead,.hero .cta,.hint,.stage{opacity:1;transform:none;filter:none}
   .rv{opacity:1;transform:none}
 }
+
+/* mensaje */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero-pad{height:0}
+.dlg{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:44px;max-width:940px}
+.dlg .q{margin:0;font-size:44px;line-height:52px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+.dlg .a{margin:10px 0 0;font-size:24px;line-height:32px;color:#7E8BA3;font-weight:500}
+.dlg .hl{color:var(--cian);text-shadow:0 0 30px rgba(29,216,251,.35)}
+.cuotas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:80px;max-width:940px}
+.cq{border:1px solid var(--line2);border-radius:20px;background:var(--panel);padding:24px 26px}
+.cq.mal{border-color:rgba(248,113,113,.35);background:linear-gradient(180deg,rgba(248,113,113,.06),var(--panel) 60%)}
+.cqh{display:block;font-size:14px;color:var(--t2);margin-bottom:12px}
+.cqh b{color:var(--ink)}
+.qln{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--t2)}
+.qln em{font-style:normal;color:var(--mut);margin-left:6px}
+.qln em.w{color:var(--warn)}
+.cf{display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;font-size:15px;color:var(--t2)}
+.cf b{font-size:30px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.cf b.up{color:var(--up)}
+.cf small{font-size:14px;font-weight:600;color:var(--mut);margin-left:4px}
+.qln .num{white-space:nowrap}
+.rayos .hint2{max-width:100%;text-align:left}
+.cnote{grid-column:1/-1;margin:6px 0 0;font-size:17px;line-height:27px;color:var(--t2)}
+.cnote b{color:var(--ink)}
+.adsec .dlg{margin-top:28px}
+.ocultos{list-style:none;margin:56px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;max-width:1000px}
+.ocultos li{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:15px;font-weight:500;color:var(--t2)}
+.ocultos li::before{content:"−";color:var(--down);font-weight:700}
+.rayos{padding-bottom:40px}
+.rayos .hint2{display:inline-flex;align-items:center;gap:8px;margin-top:40px;font-size:13px;font-weight:500;color:var(--mut)}
+.rayos .live{width:8px;height:8px;border-radius:50%;background:var(--verde);box-shadow:0 0 12px var(--verde);animation:pulse 2s infinite}
+.mly{color:#FFE600}
+.rayos .stage{opacity:1;animation:none;margin-top:28px}
+.rayos .cinta{margin-top:72px}
+.sf-note{margin-top:40px;text-align:center;font-size:14px;color:var(--mut)}
+.side [data-v=full],.side [data-v=historial],.side [data-v=costos]{display:none!important}
+@media (max-width:820px){
+ .dlg{gap:32px}.dlg .q{font-size:28px;line-height:35px}.dlg .a{font-size:19px;line-height:27px}
+ .cuotas{grid-template-columns:1fr;margin-top:56px}
+ .ocultos li{height:36px;font-size:13.5px;padding:0 14px}
+}
 </style>
 </head>
 <body>
@@ -518,12 +559,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
       <span><b>Smart</b> Analytics</span>
     </a>
     <nav class="links" aria-label="Secciones">
-      <a href="#demo">Demo</a>
+      <a href="#margen">Margen</a>
       <a href="#publicidad">Publicidad</a>
-      <a href="#cuenta">La cuenta</a>
-      <a href="#resuelve">Qué resuelve</a>
+      <a href="#costos">Costos ocultos</a>
+      <a href="#rayos">Rayos X</a>
       <a href="#precios">Precios</a>
-      <a href="#preguntas">Preguntas</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="#" data-falta="ingresar">Ingresar</a>
@@ -534,20 +574,145 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 
 <main id="top">
 
-<section class="hero" aria-labelledby="t-hero">
+<section class="hero" aria-labelledby="t-hero" style="padding-bottom:0">
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="pill"><span class="pl-t">Para vendedores de Mercado Libre</span> <b>Nuevo: Mandar a Full</b></span>
-    <h1 class="big" id="t-hero"><span class="w" style="animation-delay:.05s">Sabé</span> <span class="w" style="animation-delay:.12s">cuánto</span> <span class="w" style="animation-delay:.19s">ganás</span><br><span class="w soft" style="animation-delay:.3s">de</span> <span class="w soft" style="animation-delay:.37s">verdad</span> <span class="w soft" style="animation-delay:.44s">en</span> <span class="w ml" style="animation-delay:.51s">Mercado</span> <span class="w ml" style="animation-delay:.58s">Libre.</span></h1>
-    <p class="lead">Le descontamos a cada venta la comisión, el envío, los impuestos, la publicidad y el costo de tu producto. Lo que queda es tu ganancia real, venta por venta y al día.</p>
+    <span class="pill" style="padding-right:14px">Para vendedores de Mercado Libre</span>
+    <h1 class="big" id="t-hero"><span class="w ml" style="animation-delay:0.05s">Mercado</span> <span class="w ml" style="animation-delay:0.11s">Libre</span> <span class="w" style="animation-delay:0.17s">es</span> <span class="w" style="animation-delay:0.23s">excelente</span> <span class="w" style="animation-delay:0.29s">para</span> <span class="w" style="animation-delay:0.35s">vender.</span><br><span class="w soft" style="animation-delay:0.49s">Pero</span> <span class="w soft" style="animation-delay:0.55s">todos</span> <span class="w soft" style="animation-delay:0.61s">tenemos</span> <span class="w soft" style="animation-delay:0.67s">el</span> <span class="w soft" style="animation-delay:0.73s">mismo</span> <span class="w soft" style="animation-delay:0.79s">problema.</span></h1>
+    <p class="lead">Te da visibilidad, tráfico y ventas, y te permite crecer de una manera exponencial si hacés las cosas bien. Pero hay preguntas que casi ningún vendedor puede contestar.</p>
     <div class="cta">
       <a class="btn btn-marca" href="#precios">Pedir acceso
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="btn btn-ghost" href="#demo">Probar la demo</a>
+      <a class="btn btn-ghost" href="#margen">Ver las preguntas</a>
     </div>
-    <p class="hint"><span class="live" aria-hidden="true"></span>Demo en vivo con datos de ejemplo de un bazar: tocá cualquier cosa</p>
   </div>
+  <div class="hero-pad"></div>
 
+</section>
+
+<section class="sec" id="margen" aria-labelledby="t-margen">
+  <div class="wrap">
+    <p class="kick rv">El margen</p>
+    <h2 class="vh" id="t-margen">Preguntas sobre tu margen</h2>
+    <ol class="dlg">
+      <li class="rv"><p class="q">Si te pregunto qué margen tenés sobre lo que vendés…</p><p class="a">seguramente me lo sabés responder.</p></li>
+      <li class="rv"><p class="q">Pero, ¿realmente sabés el margen de <span class="hl">todos</span> tus productos?</p></li>
+      <li class="rv"><p class="q">¿Sabés si todas las operaciones respetan ese margen?</p></li>
+      <li class="rv"><p class="q">¿Cómo sabés que no se te escapa el precio de una publicación en 6 cuotas al precio de una en 3?</p></li>
+    </ol>
+    <div class="cuotas rv" aria-label="Ejemplo: el mismo producto al mismo precio en 3 y en 6 cuotas">
+      <div class="cq">
+        <span class="cqh">Termo de acero 1 L · <b>3 cuotas</b></span>
+        <div class="qln"><span>Precio</span><span class="num">$ 42.999</span></div>
+        <div class="qln"><span>Comisión de Mercado Libre <em>22,9 %</em></span><span class="num down">− $ 9.847</span></div>
+        <div class="qln"><span>Envío de Full</span><span class="num down">− $ 6.790</span></div>
+        <div class="qln"><span>Impuestos</span><span class="num down">− $ 1.290</span></div>
+        <div class="qln"><span>Producto</span><span class="num down">− $ 17.405</span></div>
+        <div class="cf"><span>Te queda</span><b class="num up">$ 7.667 <small>17,8 %</small></b></div>
+      </div>
+      <div class="cq mal">
+        <span class="cqh">Termo de acero 1 L · <b>6 cuotas</b></span>
+        <div class="qln"><span>Precio</span><span class="num">$ 42.999</span></div>
+        <div class="qln"><span>Comisión de Mercado Libre <em class="w">27,4 %</em></span><span class="num down">− $ 11.782</span></div>
+        <div class="qln"><span>Envío de Full</span><span class="num down">− $ 6.790</span></div>
+        <div class="qln"><span>Impuestos</span><span class="num down">− $ 1.290</span></div>
+        <div class="qln"><span>Producto</span><span class="num down">− $ 17.405</span></div>
+        <div class="cf"><span>Te queda</span><b class="num">$ 5.732 <small>13,3 %</small></b></div>
+      </div>
+      <p class="cnote">Mismo producto, mismo precio, mismo envío. La publicación en 6 cuotas deja <b class="num">$ 1.935</b> menos por venta: si vende 300 por mes, son <b class="num">$ 580.500</b> que no ves. <span class="mut">Datos de ejemplo.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="adsec" id="publicidad" aria-labelledby="t-ads">
+  <div class="wrap">
+    <div class="rv">
+      <p class="kick">Publicidad</p>
+      <h2 class="vh" id="t-ads">Preguntas sobre tu publicidad</h2>
+    </div>
+    <ol class="dlg">
+      <li class="rv"><p class="q">Si te pregunto cuánto invertís en publicidad…</p><p class="a">seguramente también lo sabés.</p></li>
+      <li class="rv"><p class="q">¿Y el ROAS?</p><p class="a">Probablemente también.</p></li>
+      <li class="rv"><p class="q">Pero, ¿sabés si realmente te está haciendo ganar plata?</p></li>
+      <li class="rv"><p class="q">¿Sabés darte cuenta cuándo una publicación con publicidad es rentable y cuándo no?</p></li>
+    </ol>
+    <div class="rv" style="margin-top:72px">
+      <p class="sub" style="margin-top:0">El ROAS mide cuánto vendiste por cada peso de publicidad, no cuánto te quedó. De esa venta también salen la comisión, el envío, los impuestos y tu producto. Tocá un anuncio:</p>
+      <div class="adtiles num" id="adtiles"></div>
+    </div>
+    <div class="adwin rv">
+      <div class="adin">
+        <div class="adtop"><span><b>Publicidad</b><span class="crumbs">Anuncios · noviembre</span></span><span class="tagx">Datos de ejemplo · tocá un anuncio</span></div>
+        <div class="vsbox">
+          <div class="vsc ml">
+            <span class="who"><i></i>Lo que te dice Mercado Ads</span>
+            <div class="big num" id="vsMl">x6,4</div>
+            <div class="what" id="vsMlTxt">de retorno</div>
+            <div class="lines num" id="vsMlLines"></div>
+          </div>
+          <div class="vsmid" aria-hidden="true"><span>vs</span></div>
+          <div class="vsc vos" id="vsVosBox">
+            <span class="who"><i></i>Lo que te quedó, según Smart Analytics</span>
+            <div class="big num" id="vsVos">$ 0</div>
+            <div class="what" id="vsVosTxt">de ganancia real</div>
+            <div class="lines num" id="vsVosLines"></div>
+          </div>
+        </div>
+        <div class="veredicto" id="veredicto" role="status" aria-live="polite"></div>
+        <div class="adtbl">
+          <table class="tbl" aria-label="Anuncios con su ganancia y su ganancia real">
+            <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th class="mlc hs">Retorno ML</th><th class="hm">Ganancia</th><th>Ganancia real</th><th class="hs">% de la ganancia en ads</th><th>Retorno real</th></tr></thead>
+            <tbody id="adsecBody"></tbody>
+          </table>
+          <p class="note"><b>Ganancia</b> es lo que dejaron las ventas del anuncio antes de la publicidad. <b>Ganancia real</b> es lo que quedó después. <b>Retorno real</b> es ganancia dividido publicidad: debajo de x1, el anuncio gasta más de lo que te deja.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="costos" aria-labelledby="t-costos">
+  <div class="wrap rv">
+    <p class="kick">Costos ocultos</p>
+    <h2 class="t" id="t-costos">Son las preguntas que incomodan a cualquier vendedor. <span class="soft">Y es normal.</span></h2>
+    <p class="sub">Hoy es imposible llevar todo en un Excel. Antes era más fácil: había menos comisiones, menos costos ocultos, menos costos variables. Hoy tenés miles de costos ocultos, impuestos y percepciones que no sabés que estás pagando.</p>
+    <ul class="ocultos" aria-label="Costos que salen de cada venta">
+      <li>Comisión por categoría</li><li>Recargo por cuotas</li><li>Cargo fijo por unidad</li><li>Envío de Full</li><li>Flete Flex</li><li>Bonificaciones de envío</li><li>Percepciones de Ingresos Brutos</li><li>Percepciones de IVA</li><li>Retenciones por provincia</li><li>IVA sobre el margen</li><li>Crédito de IVA de la comisión</li><li>Impuestos internos</li><li>Dólar del día de la venta</li><li>Armado de combos</li><li>Despacho por unidad</li><li>Costos fijos del mes</li><li>Publicidad por anuncio</li>
+    </ul>
+  </div>
+</section>
+
+<section class="scrolly" id="cuenta" aria-labelledby="t-cuenta">
+  <div class="sticky">
+    <div class="wrap sc-in">
+      <div>
+        <p class="kick">La cuenta que no entra en un Excel</p>
+        <h2 class="t" id="t-cuenta" style="font-size:46px;line-height:52px">Facturaste mucho. <span class="soft">¿Cuánto te quedó?</span></h2>
+        <div class="sc-num" style="margin-top:44px">
+          <div class="t" id="scT">Facturaste en el mes</div>
+          <div class="v num" id="scV">$ 21.384.000</div>
+          <div class="pct" id="scP">Bajá y miralo achicarse</div>
+          <div class="sc-bar" aria-hidden="true"><i id="sb0" style="background:#1DD8FB;flex-basis:100%"></i><i id="sb1" style="background:#5B6578;flex-basis:0"></i><i id="sb2" style="background:#8D99AD;flex-basis:0"></i><i id="sb3" style="background:#F29A2E;flex-basis:0"></i></div>
+        </div>
+      </div>
+      <ol class="sc-steps" id="scSteps">
+        <li class="on now"><span><b>Facturaste</b><small>1.120 ventas en el mes</small></span><span class="v num">$ 21.384.000</span></li>
+        <li><span><b>Mercado Libre</b><small>comisión, cargo fijo, envíos e impuestos</small></span><span class="v num down">− $ 6.928.000</span></li>
+        <li><span><b>Tu mercadería</b><small>en dólares, al dólar de cada venta</small></span><span class="v num down">− $ 9.410.000</span></li>
+        <li><span><b>Publicidad</b><small>repartida entre las ventas que generó</small></span><span class="v num down">− $ 1.180.000</span></li>
+        <li class="fin"><span><b>Te quedó</b><small>18,1 % de lo que facturaste</small></span><span class="v num up">$ 3.866.000</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec rayos" id="rayos" aria-labelledby="t-rayos">
+  <div class="wrap rv" style="text-align:center">
+    <p class="kick">Por eso creamos Smart Analytics</p>
+    <h2 class="t" id="t-rayos" style="margin-left:auto;margin-right:auto">Rayos X sobre cada venta <span class="soft">que cae en <span class="mly">Mercado Libre</span>.</span></h2>
+    <p class="sub" style="margin-left:auto;margin-right:auto">En esta aplicación lo ves todo. Cada venta que cae entra sola, a los pocos minutos, y ves cuánta ganancia deja libre de comisiones, costos fijos, costos variables, costos ocultos y publicidad.</p>
+    <p class="hint2"><span class="live" aria-hidden="true"></span>Demo con datos de ejemplo de un bazar: tocá cualquier venta</p>
+  </div>
   <div class="stage" id="demo">
     <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="frame">
@@ -662,168 +827,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   <div class="cinta" aria-label="Lo que le descontamos a cada venta">
     <div class="tr" id="cinta"></div>
   </div>
+  <p class="sf-note wrap">Smart Analytics es un desarrollo de SmartFull, MercadoLíder Platinum con más de 70.000 ventas por año. Lo hicimos para nuestra cuenta antes que para la tuya.</p>
 </section>
-
-<section class="adsec" id="publicidad" aria-labelledby="t-ads">
-  <div class="wrap">
-    <div class="rv">
-      <p class="kick">Publicidad</p>
-      <h2 class="t" id="t-ads">Mercado Libre te dice cuánto vendió tu anuncio. <span class="soft">Nosotros, cuánto te dejó.</span></h2>
-      <p class="sub">El retorno de Mercado Ads mide facturación: cuánto vendiste por cada peso que pusiste. Un anuncio puede vender veinte veces lo que gastó y hacerte perder plata, porque de esa venta también salen la comisión, el envío, los impuestos y tu producto. Cruzamos lo que gastó cada anuncio con la ganancia real de sus ventas.</p>
-      <div class="adtiles num" id="adtiles"></div>
-    </div>
-    <div class="adwin rv">
-      <div class="adin">
-        <div class="adtop"><span><b>Publicidad</b><span class="crumbs">Anuncios · noviembre</span></span><span class="tagx">Datos de ejemplo · tocá un anuncio</span></div>
-        <div class="vsbox">
-          <div class="vsc ml">
-            <span class="who"><i></i>Lo que te dice Mercado Ads</span>
-            <div class="big num" id="vsMl">x6,4</div>
-            <div class="what" id="vsMlTxt">de retorno</div>
-            <div class="lines num" id="vsMlLines"></div>
-          </div>
-          <div class="vsmid" aria-hidden="true"><span>vs</span></div>
-          <div class="vsc vos" id="vsVosBox">
-            <span class="who"><i></i>Lo que te quedó, según Smart Analytics</span>
-            <div class="big num" id="vsVos">$ 0</div>
-            <div class="what" id="vsVosTxt">de ganancia real</div>
-            <div class="lines num" id="vsVosLines"></div>
-          </div>
-        </div>
-        <div class="veredicto" id="veredicto" role="status" aria-live="polite"></div>
-        <div class="adtbl">
-          <table class="tbl" aria-label="Anuncios con su ganancia y su ganancia real">
-            <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th class="mlc hs">Retorno ML</th><th class="hm">Ganancia</th><th>Ganancia real</th><th class="hs">% de la ganancia en ads</th><th>Retorno real</th></tr></thead>
-            <tbody id="adsecBody"></tbody>
-          </table>
-          <p class="note"><b>Ganancia</b> es lo que dejaron las ventas del anuncio antes de la publicidad. <b>Ganancia real</b> es lo que quedó después. <b>Retorno real</b> es ganancia dividido publicidad: debajo de x1, el anuncio gasta más de lo que te deja.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="scrolly" id="cuenta" aria-labelledby="t-cuenta">
-  <div class="sticky">
-    <div class="wrap sc-in">
-      <div>
-        <p class="kick">La cuenta que nadie te hace</p>
-        <h2 class="t" id="t-cuenta" style="font-size:46px;line-height:52px">Facturaste mucho. <span class="soft">¿Cuánto te quedó?</span></h2>
-        <div class="sc-num" style="margin-top:44px">
-          <div class="t" id="scT">Facturaste en el mes</div>
-          <div class="v num" id="scV">$ 21.384.000</div>
-          <div class="pct" id="scP">Bajá y miralo achicarse</div>
-          <div class="sc-bar" aria-hidden="true"><i id="sb0" style="background:#1DD8FB;flex-basis:100%"></i><i id="sb1" style="background:#5B6578;flex-basis:0"></i><i id="sb2" style="background:#8D99AD;flex-basis:0"></i><i id="sb3" style="background:#F29A2E;flex-basis:0"></i></div>
-        </div>
-      </div>
-      <ol class="sc-steps" id="scSteps">
-        <li class="on now"><span><b>Facturaste</b><small>1.120 ventas en el mes</small></span><span class="v num">$ 21.384.000</span></li>
-        <li><span><b>Mercado Libre</b><small>comisión, cargo fijo, envíos e impuestos</small></span><span class="v num down">− $ 6.928.000</span></li>
-        <li><span><b>Tu mercadería</b><small>en dólares, al dólar de cada venta</small></span><span class="v num down">− $ 9.410.000</span></li>
-        <li><span><b>Publicidad</b><small>repartida entre las ventas que generó</small></span><span class="v num down">− $ 1.180.000</span></li>
-        <li class="fin"><span><b>Te quedó</b><small>18,1 % de lo que facturaste</small></span><span class="v num up">$ 3.866.000</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="resuelve" aria-labelledby="t-res">
-  <div class="wrap">
-    <div class="rv">
-      <p class="kick">Qué resuelve</p>
-      <h2 class="t" id="t-res">Una pregunta por pantalla. <span class="soft">Contestada con un número.</span></h2>
-    </div>
-    <div class="bento">
-      <article class="bx b4 rv">
-        <h3>Cada venta, abierta hasta el último peso</h3>
-        <p>Tocás una venta y ves la cuenta entera, en el mismo orden que Mercado Libre. Si algo no cierra, lo marcamos: nunca ves una ganancia que no existe.</p>
-        <div class="viz num">
-          <div class="vline"><span>Termo de acero 1 L, lo que pagó el comprador</span><span>$ 42.500</span></div>
-          <div class="vline"><span>Comisión de Mercado Libre</span><span class="down">− $ 6.588</span></div>
-          <div class="vline"><span>Envío de Full</span><span class="down">− $ 6.790</span></div>
-          <div class="vline"><span>Costo del producto, al dólar de ese día</span><span class="down">− $ 17.405</span></div>
-          <div class="vline"><span>Impuestos, IVA y publicidad</span><span class="down">− $ 6.975</span></div>
-          <div class="vfin"><span>Ganancia real · 11,2 %</span><b>$ 4.742</b></div>
-        </div>
-      </article>
-      <article class="bx b2 rv">
-        <h3>Hoy contra ayer, a la misma hora</h3>
-        <p>No contra el día entero: a las 10 de la mañana sabés si venís mejor que ayer a las 10.</p>
-        <div class="viz">
-          <svg class="spark" viewBox="0 0 300 120" aria-hidden="true"><path d="M0 112 C40 104 70 92 100 80 S160 50 200 40 S260 18 300 10" fill="none" stroke="#5B6578" stroke-width="2" stroke-dasharray="4 5"/><path class="l" d="M0 114 C40 100 70 84 100 70 S160 38 200 30 S260 10 300 4" fill="none" stroke="#1DD8FB" stroke-width="3" stroke-linecap="round"/></svg>
-          <div style="font-size:14px;font-weight:600" class="up num">▲ 12,4 % vs ayer a esta hora</div>
-        </div>
-      </article>
-      <article class="bx b3 rv">
-        <h3>Publicidad que rinde y que no</h3>
-        <p>Cruzamos lo que gastó cada anuncio con lo que de verdad te dejaron sus ventas.</p>
-        <div class="viz vbands num">
-          <div><b class="down">14 %</b><span>de tu inversión, gasta más de lo que genera<em><i style="--w:14%;background:#F87171"></i></em></span></div>
-          <div><b class="warnc">31 %</b><span>genera entre 1x y 2x lo que invierte<em><i style="--w:31%;background:#F29A2E"></i></em></span></div>
-          <div><b>39 %</b><span>genera entre 2x y 3x lo que invierte<em><i style="--w:39%;background:#8D99AD"></i></em></span></div>
-          <div><b class="up">16 %</b><span>genera 3x o más sobre lo que invierte<em><i style="--w:16%;background:#34D399"></i></em></span></div>
-        </div>
-      </article>
-      <article class="bx b3 rv">
-        <h3>Qué mandar a Full, y cuánto</h3>
-        <p>Medimos lo que vendés por Full y lo que te queda. Elegís cuántos días cubrir y te armamos el envío.</p>
-        <div class="viz num">
-          <div class="vline"><span>Termo de acero 1 L</span><span><b>412 u.</b> · <span class="down">3 días</span></span></div>
-          <div class="vline"><span>Set de 6 vasos de vidrio</span><span><b>296 u.</b> · <span class="down">5 días</span></span></div>
-          <div class="vline"><span>Sartén antiadherente 28 cm</span><span><b>184 u.</b> · <span class="warnc">11 días</span></span></div>
-          <div class="vline"><span>Tabla de picar de bambú</span><span class="mut">le alcanza, 52 días</span></div>
-        </div>
-      </article>
-      <article class="bx b2 rv">
-        <h3>Tus costos, en dólares</h3>
-        <p>Cargás el costo como lo comprás. Cada venta usa el dólar de su día, así cambiar un costo no te mueve el pasado.</p>
-        <div class="big-n num">US$ 11,80</div>
-        <div class="mut" style="font-size:14px">Termo de acero 1 L, sin IVA</div>
-      </article>
-      <article class="bx b2 rv">
-        <h3>Combos que se arman solos</h3>
-        <p>Un kit de sartén y tabla toma el costo de sus dos partes. Si a una le falta, te avisamos.</p>
-        <div class="viz num">
-          <div class="vline"><span>1 × Sartén 28 cm</span><span>US$ 9,40</span></div>
-          <div class="vline"><span>1 × Tabla de bambú</span><span>US$ 4,40</span></div>
-          <div class="vline" style="font-weight:700"><span style="color:var(--ink)">Kit cocina</span><span>US$ 13,80</span></div>
-        </div>
-      </article>
-      <article class="bx b2 rv">
-        <h3>En el celular, como en la computadora</h3>
-        <p>Con el menú abajo, en claro o en oscuro.</p>
-        <div class="phone" aria-hidden="true"><span class="pn"></span><span class="pk"><small>Ganancia real de hoy</small><b class="up num">$ 1.284.120</b></span><span class="pk"><small>Ventas</small><b class="num">342</b></span><span class="pk"><small>Publicidad</small><b class="num">$ 415.450</b></span><span class="pnav"><i></i><i></i><i></i><i></i></span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="padding-top:40px" aria-labelledby="t-como">
-  <div class="wrap rv">
-    <p class="kick">Cómo funciona</p>
-    <h2 class="t" id="t-como">De tu cuenta a tu ganancia real, <span class="soft">en tres pasos.</span></h2>
-    <div class="pasos">
-      <div class="linea" aria-hidden="true"><i></i></div>
-      <div class="paso"><span class="n">1</span><h3>Conectás tu cuenta</h3><p>Le das permiso desde Mercado Libre con su botón oficial.</p></div>
-      <div class="paso"><span class="n">2</span><h3>Cargás tus costos</h3><p>Una planilla con tus productos, en dólares o en pesos, con su IVA. Empezás por los que más vendés.</p></div>
-      <div class="paso"><span class="n">3</span><h3>Ves tu ganancia real</h3><p>Cada venta nueva entra sola, casi en el momento, con su cuenta hecha.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" style="padding-top:40px" aria-labelledby="t-nums">
-  <div class="wrap rv">
-    <p class="kick">Hecho por gente que vende</p>
-    <h2 class="t" id="t-nums">Lo armamos para nuestra cuenta <span class="soft">antes que para la tuya.</span></h2>
-    <p class="sub">Smart Analytics es un desarrollo de SmartFull. Nació para nuestra propia cuenta MercadoLíder Platinum, y cada número lo controlamos contra lo que Mercado Libre depositó de verdad.</p>
-    <div class="nums">
-      <div><span class="v num" data-cnt="70000" data-pre="+">0</span><p>ventas por año en la cuenta de SmartFull, donde nació</p></div>
-      <div><span class="v">En vivo</span><p>con la app abierta, tus ventas entran solas cada 90 segundos</p></div>
-      <div><span class="v num" data-cnt="12" data-suf="">0</span><p>costos que le descontamos a cada venta</p></div>
-    </div>
-  </div>
-</section>
-
 
 <section class="sec" id="precios" style="padding-top:40px" aria-labelledby="t-precios">
   <div class="wrap rv">
@@ -872,28 +877,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
   </div>
 </section>
 
-<section class="sec" id="preguntas" style="padding-top:40px" aria-labelledby="t-faq">
-  <div class="wrap rv">
-    <p class="kick">Preguntas</p>
-    <h2 class="t" id="t-faq">Lo que nos preguntan antes de empezar.</h2>
-    <div class="faq">
-      <details><summary>¿Cuánto cuesta?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>Depende de cuántas ventas hacés por mes en Mercado Libre. Hasta 50 ventas por mes es gratis. Arriba de eso, el plan Base arranca en $ 26.999 por mes y el Advanced en $ 42.999. Movés la barra de Precios y ves el tuyo.</p></details>
-      <details><summary>¿Necesito saber de números o de Excel?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>No. Conectás tu cuenta y cargás el costo de tus productos. La cuenta de cada venta la hacemos nosotros, y te mostramos el resultado con un número grande y una comparación.</p></details>
-      <details><summary>¿De dónde salen los números?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>De Mercado Libre, por su conexión oficial: tus ventas, lo que depositó por cada pago, tu publicidad y tu stock en Full. Lo único que cargás vos es lo que Mercado Libre no sabe: cuánto te costó cada producto.</p></details>
-      <details><summary>¿Cada cuánto se actualiza?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>Con la app abierta, tus ventas entran solas cada 90 segundos. Con la app cerrada se siguen trayendo cada 10 minutos, así que cuando entrás ya está todo al día. Y si querés el dato en el momento, hay un botón para actualizar.</p></details>
-      <details><summary>¿Qué pasa con una venta de un producto sin costo cargado?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>Suma a lo que facturaste pero no a tu ganancia, y te lo avisamos con la lista de productos que faltan. Así nunca ves una ganancia que no existe.</p></details>
-      <details><summary>¿Sirve si vendo por Full y por Flex?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>Sí. El envío de Full lo tomamos de lo que te descontó Mercado Libre, y el flete Flex lo calculamos con la tarifa de tu transportista.</p></details>
-      <details><summary>¿Sirve si soy monotributista?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>Sí. Elegís tu condición fiscal y la cuenta del IVA cambia sola: si sos responsable inscripto descontamos el IVA a pagar y sumamos el crédito; si sos monotributista, no.</p></details>
-      <details><summary>¿Lo puedo usar desde el celular?<svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg></summary><p>Sí. Funciona en el navegador del celular, con el menú abajo, en claro o en oscuro.</p></details>
-    </div>
-  </div>
-</section>
-
 <section class="cierre" aria-labelledby="t-cierre">
   <div class="wrap rv">
     <svg class="iso" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1B2436"/><rect x="7.5" y="17" width="5" height="8" rx="1.5" fill="#1DD8FB"/><rect x="13.5" y="12" width="5" height="13" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="15.5" width="5" height="9.5" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="7" width="5" height="6.5" rx="1.5" fill="#07F9AB"/></svg>
-    <h2 id="t-cierre">Dejá de adivinar cuánto ganás.</h2>
-    <p>Conectá tu cuenta de Mercado Libre, cargá tus costos y mirá tu ganancia real de hoy.</p>
+    <h2 id="t-cierre">Mirá cada venta con Rayos X.</h2>
+    <p>Conectá tu cuenta de Mercado Libre, cargá tus costos y empezá a contestar esas preguntas con un número.</p>
     <div class="cta"><a class="btn btn-marca" href="#precios">Pedir acceso</a><a class="btn btn-ghost" href="#demo">Volver a la demo</a></div>
   </div>
 </section>
