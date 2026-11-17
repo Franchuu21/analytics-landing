@@ -629,7 +629,6 @@ section[id],#demo{scroll-margin-top:72px}
 .stage [data-view=publicidad] .naj{color:#F29A2E}
 @media (max-width:820px){.stage [data-view=publicidad] .tbl td.gre b{display:block}.stage [data-view=publicidad] .tbl td.gre small{display:block}}
 .sf-note{margin-top:40px;text-align:center;font-size:14px;color:var(--mut)}
-.side [data-v=full],.side [data-v=historial],.side [data-v=costos]{display:none!important}
 @media (max-width:820px){
  .dlg{gap:32px}.dlg .q{font-size:28px;line-height:35px}.dlg .a{font-size:19px;line-height:27px}
  .cuotas{grid-template-columns:1fr;margin-top:56px}
@@ -733,6 +732,15 @@ section[id],#demo{scroll-margin-top:72px}
 .adin .veredicto{border-radius:14px}
 .adin .tbl{border-collapse:collapse}
 .adin .adtbl .tbl tr.sel{background:#152037}
+.stage .side{overflow-y:auto;scrollbar-width:none}.stage .side::-webkit-scrollbar{display:none}
+.stage .side button{height:31px;flex:none}
+.stage .side .gt{margin:10px 10px 3px}
+.enapp{max-width:520px;margin:72px auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.enapp h4{margin:0;font-size:22px;font-weight:600;color:var(--ink)}
+.enapp p{margin:0;font-size:14.5px;line-height:1.55;color:var(--t2)}
+.enapp p.mut{font-size:13px;color:var(--mut)}
+.enapp .vbtn{margin-top:6px}
+@media (max-width:820px){.stage .side .dk,.stage .side [data-v=costos]{display:none!important}.stage .side button{flex:1 1 0;height:54px;font-size:10.5px}}
 @media (max-width:1100px){.stage .sbx{display:none}}
 @media (max-width:820px){
   .stage .app{height:740px;grid-template-columns:minmax(0,1fr)}
@@ -802,10 +810,25 @@ section[id],#demo{scroll-margin-top:72px}
       <div class="app" id="app" aria-label="Demo de Smart Metrics con datos de ejemplo">
         <aside class="side" role="tablist" aria-label="Menú de la demo">
           <div class="lg"><svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1B2436"/><rect x="7.5" y="17" width="5" height="8" rx="1.5" fill="#1DD8FB"/><rect x="13.5" y="12" width="5" height="13" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="15.5" width="5" height="9.5" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="7" width="5" height="6.5" rx="1.5" fill="#07F9AB"/></svg><span><b>Smart</b> Metrics</span></div>
-          <div class="gt">Principal</div><button role="tab" data-v="inicio" aria-selected="true"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z"/></svg>Inicio</button><button role="tab" data-v="ventas" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10v14l-2.5-1.5L10 17l-2.5-1.5L5 17zM8 7h4M8 10h4"/></svg>Ventas</button><button role="tab" data-v="historial" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14M7 2.5v3M13 2.5v3"/></svg>Historial</button>
-          <div class="gt">Publicidad</div><button role="tab" data-v="publicidad" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8v4h3l6 4V4L6 8zM15 7.5a3.5 3.5 0 0 1 0 5"/></svg>Anuncios</button>
-          <button role="tab" data-v="full" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5l7 3.5v8l-7 3.5L3 14V6zM3 6l7 3.5L17 6M10 9.5v8"/></svg><span class="lb">Mandar a Full</span><span class="ls">Full</span></button>
-          <button role="tab" data-v="costos" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5V4a1 1 0 0 1 1-1h6.5L17 9.5 10.5 16z"/><circle cx="7" cy="7" r="1.2"/></svg>Productos</button>
+          <div class="gt">Principal</div>
+          <button role="tab" data-v="inicio" aria-selected="true"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9 10 3.5 17 9v8h-4.5v-5h-5v5H3z"/></svg>Inicio</button>
+          <button role="tab" class="dk" data-v="metricas" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v14h14M6.5 12.5 9.5 9l2.5 2.5L16.5 6"/></svg>Métricas</button>
+          <button role="tab" data-v="ventas" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2.5h10v15l-2.5-1.5-2.5 1.5-2.5-1.5L5 17.5zM8 7h4M8 10.5h4"/></svg>Ventas</button>
+          <button role="tab" class="dk" data-v="analisis" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h12v3H4zM4 10.5h7v4.5H4zM13.5 10.5H16v4.5h-2.5"/></svg>Análisis</button>
+          <button role="tab" data-v="historial" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5h13v12h-13zM3.5 9h13M7 3v4M13 3v4"/></svg>Historial</button>
+          <div class="gt">Publicidad</div>
+          <button role="tab" class="dk" data-v="campanias" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17V3M4 4h10l-2 3.5L14 11H4"/></svg>Campañas</button>
+          <button role="tab" data-v="publicidad" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8v4h3l6 4V4L6 8zM15 7.5c1.2 1 1.2 4 0 5"/></svg>Anuncios</button>
+          <div class="gt">Stock</div>
+          <button role="tab" data-v="full" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5 10 3l7 3.5v7L10 17l-7-3.5zM3 6.5 10 10l7-3.5M10 10v7"/></svg><span class="lb">Mandar a Full</span><span class="ls">Full</span></button>
+          <div class="gt">Costos</div>
+          <button role="tab" data-v="costos" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7l7 7-7 7-7-7zM7 7h.01"/></svg>Productos</button>
+          <button role="tab" class="dk" data-v="combos" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h6v6H3zM11 3h6v6h-6zM3 11h6v6H3zM11 11h6v6h-6z"/></svg>Combos</button>
+          <button role="tab" class="dk" data-v="variables" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h12M4 10h12M4 15h12M7 3.5v3M13 8.5v3M9 13.5v3"/></svg>Costos variables</button>
+          <div class="gt">Cuenta</div>
+          <button role="tab" class="dk" data-v="conexiones" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l4-4M6.5 9.5 4.8 11.2a2.5 2.5 0 0 0 3.5 3.5l1.7-1.7M13.5 10.5l1.7-1.7a2.5 2.5 0 0 0-3.5-3.5L10 7"/></svg>Conexiones y datos</button>
+          <button role="tab" class="dk" data-v="equipo" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM2.5 16c.6-2.6 2.3-4 4.5-4s3.9 1.4 4.5 4M13.5 9a2 2 0 1 0 0-4M14 12c1.8.2 3 1.5 3.5 4"/></svg>Equipo y plan</button>
+          <button role="tab" class="dk" data-v="perfil" aria-selected="false"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3.5 17c1-3 3.5-4.5 6.5-4.5s5.5 1.5 6.5 4.5"/></svg>Perfil</button>
           <div class="acct"><span class="av">BC</span><span>Bazar Central<small>Cuenta de ejemplo</small></span></div>
         </aside>
         <div class="main">
@@ -865,6 +888,15 @@ section[id],#demo{scroll-margin-top:72px}
                 <div class="hcols" id="hcols"></div>
                 <div class="haxis"><span>1 nov</span><span>6 nov</span><span>12 nov, hoy</span></div>
                 <div class="casc" id="casc"></div>
+              </div>
+            </section>
+
+            <section class="view" data-view="app" aria-label="Pantalla de la app">
+              <div class="enapp">
+                <h4 id="eaT"></h4>
+                <p id="eaP"></p>
+                <p class="mut">En la demo podés recorrer Inicio, Ventas, Historial, Anuncios, Mandar a Full y Productos. Esta pantalla la ves con tus datos en la app.</p>
+                <a class="vbtn" href="https://app.smartmetrics.com.ar/#crear">Probalo con tu cuenta</a>
               </div>
             </section>
 
@@ -1500,14 +1532,26 @@ document.getElementById('cbody').addEventListener('input', function(e){
 
 /* ---------- navegación de la demo ---------- */
 var TITULOS = {inicio:'Inicio', ventas:'Ventas', publicidad:'Anuncios', full:'Mandar a Full', historial:'Historial', costos:'Productos'};
+var EN_APP = {
+  metricas:['Métricas','Cómo viene tu negocio semana a semana: facturación, unidades, ganancia y publicidad en un solo gráfico, y qué productos lo están moviendo.'],
+  analisis:['Análisis','Qué productos y publicaciones te dejan plata y cuáles no: facturación, ganancia y margen de cada uno.'],
+  campanias:['Campañas','Cada campaña de Mercado Ads con lo que invertiste y la ganancia real que te dejó después de la publicidad.'],
+  combos:['Combos','Cargás cuántas unidades de cada producto lleva el combo y su costo sale solo de los componentes.'],
+  variables:['Costos variables','Lo que te cuesta despachar y armar cada venta: Full, depósito propio y armado de combos.'],
+  conexiones:['Conexiones y datos','Conectás tu cuenta de Mercado Libre y ves cuándo se actualizó cada dato.'],
+  equipo:['Equipo y plan','Sumás a tu equipo con permisos según su rol, y ves tu plan.'],
+  perfil:['Perfil','Tus datos y tus preferencias.']
+};
 document.querySelector('.side').addEventListener('click', function(e){
   var b = e.target.closest('button[data-v]'); if (!b) return; ir(b.dataset.v);
 });
 function ir(v){
   st.view = v; if (drawer.classList.contains('on')) cerrar();
   document.querySelectorAll('.side button[data-v]').forEach(function(x){ x.setAttribute('aria-selected', String(x.dataset.v === v)); });
-  document.querySelectorAll('.view').forEach(function(x){ x.classList.toggle('on', x.dataset.view === v); });
-  document.getElementById('vt').textContent = TITULOS[v];
+  var ea = EN_APP[v];
+  if (ea){ document.getElementById('eaT').textContent = ea[0]; document.getElementById('eaP').textContent = ea[1]; }
+  document.querySelectorAll('.view').forEach(function(x){ x.classList.toggle('on', x.dataset.view === (ea ? 'app' : v)); });
+  document.getElementById('vt').textContent = ea ? ea[0] : TITULOS[v];
   document.getElementById('body').scrollTop = 0;
   pintarVista();
 }
