@@ -566,6 +566,19 @@ section[id],#demo{scroll-margin-top:72px}
 .mly{color:#FFE600}
 .rayos .stage{opacity:1;animation:none;margin-top:28px}
 .rayos .cinta{margin-top:72px}
+.rayos.subida{padding-top:36px}
+.rayos.subida .hint2{margin-top:0}
+.rayos.subida .stage{margin-top:18px}
+.rayos-t{margin-top:96px}
+.rayos.subida .cinta{margin-top:56px}
+.hero.alta{padding-top:112px}
+.hero.alta h1.big{font-size:60px;line-height:66px;margin-top:22px;max-width:1240px}
+.hero.alta p.lead{font-size:20px;line-height:31px;margin-top:22px;max-width:720px}
+.hero.alta .cta{margin-top:28px}
+@media (max-width:1080px){.hero.alta h1.big{font-size:54px;line-height:60px}}
+@media (max-width:820px){.rayos.subida{padding-top:28px}.rayos-t{margin-top:64px}.hero.alta{padding-top:72px}
+  .hero.alta h1.big{font-size:38px;line-height:43px}.hero.alta p.lead{font-size:17px;line-height:26px;margin-top:18px}.hero.alta .cta{margin-top:22px}
+  .rayos.subida .hint2{display:block;text-align:center;padding:0 12px}.rayos.subida .hint2 .live{display:inline-block;vertical-align:1px;margin-right:8px}}
 .sf-note{margin-top:40px;text-align:center;font-size:14px;color:var(--mut)}
 .side [data-v=full],.side [data-v=historial],.side [data-v=costos]{display:none!important}
 @media (max-width:820px){
@@ -699,10 +712,10 @@ section[id],#demo{scroll-margin-top:72px}
       <span><b>Smart</b> Metrics</span>
     </a>
     <nav class="links" aria-label="Secciones">
+      <a href="#demo">Demo</a>
       <a href="#margen">Margen</a>
       <a href="#publicidad">Publicidad</a>
       <a href="#costos">Costos ocultos</a>
-      <a href="#rayos">Rayos X</a>
       <a href="#precios">Precios</a>
     </nav>
     <div class="nav-cta">
@@ -714,7 +727,7 @@ section[id],#demo{scroll-margin-top:72px}
 
 <main id="top">
 
-<section class="hero" aria-labelledby="t-hero" style="padding-bottom:0">
+<section class="hero alta" aria-labelledby="t-hero" style="padding-bottom:0">
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap">
     <span class="pill" style="padding-right:14px">Para vendedores de Mercado Libre</span>
@@ -723,15 +736,118 @@ section[id],#demo{scroll-margin-top:72px}
     <div class="cta">
       <a class="btn btn-marca" href="https://app.smartmetrics.com.ar/#crear">Probar gratis 7 días
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="btn btn-ghost vp" href="#margen">Ver las preguntas<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+      <a class="btn btn-ghost vp" href="#demo">Ver la demo<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
     </div>
-    <a class="scue gone" href="#margen" aria-label="Bajar a las preguntas">
-      <span>Seguí bajando</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </a>
   </div>
   <div class="hero-pad"></div>
 
+</section>
+
+<section class="sec rayos subida" id="rayos" aria-labelledby="t-rayos">
+  <div class="wrap" style="text-align:center">
+    <p class="hint2"><span class="live" aria-hidden="true"></span>Demo con datos de ejemplo de un bazar: tocá cualquier venta</p>
+  </div>
+  <div class="stage" id="demo">
+    <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="frame">
+      <div class="app" id="app" aria-label="Demo de Smart Metrics con datos de ejemplo">
+        <aside class="side" role="tablist" aria-label="Menú de la demo">
+          <div class="lg"><svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1B2436"/><rect x="7.5" y="17" width="5" height="8" rx="1.5" fill="#1DD8FB"/><rect x="13.5" y="12" width="5" height="13" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="15.5" width="5" height="9.5" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="7" width="5" height="6.5" rx="1.5" fill="#07F9AB"/></svg><span><b>Smart</b> Metrics</span></div>
+          <div class="gt">Principal</div><button role="tab" data-v="inicio" aria-selected="true"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z"/></svg>Inicio</button><button role="tab" data-v="ventas" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10v14l-2.5-1.5L10 17l-2.5-1.5L5 17zM8 7h4M8 10h4"/></svg>Ventas</button><button role="tab" data-v="historial" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14M7 2.5v3M13 2.5v3"/></svg>Historial</button>
+          <div class="gt">Publicidad</div><button role="tab" data-v="publicidad" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8v4h3l6 4V4L6 8zM15 7.5a3.5 3.5 0 0 1 0 5"/></svg>Anuncios</button>
+          <button role="tab" data-v="full" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5l7 3.5v8l-7 3.5L3 14V6zM3 6l7 3.5L17 6M10 9.5v8"/></svg><span class="lb">Mandar a Full</span><span class="ls">Full</span></button>
+          <button role="tab" data-v="costos" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5V4a1 1 0 0 1 1-1h6.5L17 9.5 10.5 16z"/><circle cx="7" cy="7" r="1.2"/></svg>Productos</button>
+          <div class="acct"><span class="av">BC</span><span>Bazar Central<small>Cuenta de ejemplo</small></span></div>
+        </aside>
+        <div class="main">
+          <div class="top">
+            <h3 id="vt">Inicio</h3>
+            <div class="sbx" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar ventas o pantallas…<kbd>Ctrl K</kbd></div>
+            <div class="r"><span class="act"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="m6.8 10.2 2.2 2.2 4.2-4.6"/></svg>Datos actualizados</span><span class="tagx">Datos de ejemplo</span><span class="st"><i></i><span id="hora">14:35</span></span></div>
+          </div>
+          <div class="body" id="body">
+
+            <section class="view on" data-view="inicio" aria-label="Inicio">
+              <div class="i2">
+                <div class="i2h"><b>Hoy</b><span class="c">comparado con ayer a esta hora</span><span class="fch"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3.5 5h13v12h-13zM3.5 9h13M7 3v4M13 3v4"/></svg>Hoy, 12 nov</span></div>
+                <div class="tgrid" id="tgrid" role="group" aria-label="Métricas de hoy"></div>
+                <div class="i2s"><div class="sh"><b>Para mirar hoy</b><span class="n num" id="pmN"></span></div><div class="pmg" id="pmg"></div></div>
+                <div class="i2s"><div class="sh"><i aria-hidden="true"></i><b>Últimas ventas</b><span>en vivo</span></div>
+                  <div class="uvw"><table class="tbl uvt" aria-label="Últimas ventas"><thead><tr><th class="l">Producto</th><th class="hs">Logística</th><th class="hm">Hora</th><th class="hm">Facturación</th><th class="hs">Cobrado neto</th><th>Ganancia</th><th>Margen</th></tr></thead><tbody id="uvb"></tbody></table></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="view" data-view="ventas" aria-label="Ventas">
+              <div class="bar1">
+                <div class="chips" id="vchips" role="group" aria-label="Filtrar ventas"></div>
+                <span class="mut" style="font-size:12px">Tocá una venta para ver su cuenta</span>
+              </div>
+              <table class="tbl" aria-label="Ventas de hoy">
+                <thead><tr><th class="l hm">Hora</th><th class="l">Producto</th><th class="hs">Unid.</th><th class="hm">Precio</th><th>Ganancia</th><th>Margen</th><th class="hs">Markup</th></tr></thead>
+                <tbody id="vbody"></tbody>
+              </table>
+            </section>
+
+            <section class="view" data-view="publicidad" aria-label="Publicidad">
+              <div class="bands" id="bands" role="group" aria-label="Reparto de tu inversión"></div>
+              <div class="alerta" id="adalerta"></div>
+              <table class="tbl" aria-label="Anuncios">
+                <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th>Ganancia real</th><th class="hs">ROAS real</th></tr></thead>
+                <tbody id="abody"></tbody>
+              </table>
+            </section>
+
+            <section class="view" data-view="full" aria-label="Mandar a Full">
+              <div class="fullh">
+                <div><div style="font-size:12px;color:var(--mut);font-weight:500;margin-bottom:6px">Cubrir</div><div class="seg" id="fdias" role="group" aria-label="Días a cubrir"><button aria-pressed="false" data-d="15">15 días</button><button aria-pressed="true" data-d="30">30 días</button><button aria-pressed="false" data-d="45">45 días</button></div></div>
+                <span class="mut" style="font-size:12px">Según lo que vendés por Full y tu stock en Full</span>
+              </div>
+              <div class="strip" id="fstrip"></div>
+              <table class="tbl" aria-label="Qué mandar a Full">
+                <thead><tr><th class="l">Producto</th><th>Mandar</th><th class="hs">Vende por día</th><th class="hm">Hoy en Full</th><th>Le alcanza</th></tr></thead>
+                <tbody id="fbody"></tbody>
+              </table>
+            </section>
+
+            <section class="view" data-view="historial" aria-label="Historial">
+              <div class="card" style="padding:16px">
+                <div class="bar1"><b style="font-size:14px">Noviembre: facturación y ganancia real de cada día</b><div class="legend"><span><i style="background:var(--cian)"></i>Facturación</span><span><i style="background:var(--up)"></i>Ganancia real</span></div></div>
+                <div class="hcols" id="hcols"></div>
+                <div class="haxis"><span>1 nov</span><span>6 nov</span><span>12 nov, hoy</span></div>
+                <div class="casc" id="casc"></div>
+              </div>
+            </section>
+
+            <section class="view" data-view="costos" aria-label="Costos">
+              <div class="tipcost"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5M10 6.5v.01"/></svg>Probá cambiar un costo: la ganancia se recalcula en toda la demo, al instante.</div>
+              <table class="tbl" aria-label="Costo de cada producto">
+                <thead><tr><th class="l">Producto</th><th title="Costo sin IVA, en dólares">Costo US$</th><th class="hs">IVA</th><th class="hm">En pesos</th><th>Ganancia</th></tr></thead>
+                <tbody id="cbody"></tbody>
+              </table>
+            </section>
+
+          </div>
+          <aside class="drawer" id="drawer" aria-label="Detalle de la venta" aria-hidden="true">
+            <div class="dh"><div><b id="dtit">Venta</b><small id="dsub"></small></div><button class="x" id="dx" aria-label="Cerrar el detalle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg></button></div>
+            <div class="db" id="dbody"></div>
+          </aside>
+          <div class="toast" id="toast" role="status" aria-live="polite"><i></i><span id="toastt"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="reflejo" aria-hidden="true"></div>
+  </div>
+
+  <div class="wrap rv rayos-t" style="text-align:center">
+    <h2 class="t" id="t-rayos" style="margin-left:auto;margin-right:auto">Rayos X sobre cada venta <span class="soft">que cae en <span class="mly">Mercado Libre</span>.</span></h2>
+    <p class="sub" style="margin-left:auto;margin-right:auto">En esta aplicación lo ves todo. Cada venta que cae entra sola, a los pocos minutos, y ves cuánta ganancia deja libre de comisiones, costos fijos, costos variables, costos ocultos y publicidad.</p>
+  </div>
+
+  <div class="cinta" aria-label="Lo que le descontamos a cada venta">
+    <div class="tr" id="cinta"></div>
+  </div>
+  <p class="sf-note wrap">Smart Metrics es un desarrollo de SmartFull, MercadoLíder Platinum con más de 70.000 ventas por año. Lo hicimos para nuestra cuenta antes que para la tuya.</p>
 </section>
 
 <section class="sec" id="margen" aria-labelledby="t-margen">
@@ -850,110 +966,6 @@ section[id],#demo{scroll-margin-top:72px}
   </div>
 </section>
 
-<section class="sec rayos" id="rayos" aria-labelledby="t-rayos">
-  <div class="wrap rv" style="text-align:center">
-    <p class="kick">Por eso creamos Smart Metrics</p>
-    <h2 class="t" id="t-rayos" style="margin-left:auto;margin-right:auto">Rayos X sobre cada venta <span class="soft">que cae en <span class="mly">Mercado Libre</span>.</span></h2>
-    <p class="sub" style="margin-left:auto;margin-right:auto">En esta aplicación lo ves todo. Cada venta que cae entra sola, a los pocos minutos, y ves cuánta ganancia deja libre de comisiones, costos fijos, costos variables, costos ocultos y publicidad.</p>
-    <p class="hint2"><span class="live" aria-hidden="true"></span>Demo con datos de ejemplo de un bazar: tocá cualquier venta</p>
-  </div>
-  <div class="stage" id="demo">
-    <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="frame">
-      <div class="app" id="app" aria-label="Demo de Smart Metrics con datos de ejemplo">
-        <aside class="side" role="tablist" aria-label="Menú de la demo">
-          <div class="lg"><svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1B2436"/><rect x="7.5" y="17" width="5" height="8" rx="1.5" fill="#1DD8FB"/><rect x="13.5" y="12" width="5" height="13" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="15.5" width="5" height="9.5" rx="1.5" fill="#1DD8FB"/><rect x="19.5" y="7" width="5" height="6.5" rx="1.5" fill="#07F9AB"/></svg><span><b>Smart</b> Metrics</span></div>
-          <div class="gt">Principal</div><button role="tab" data-v="inicio" aria-selected="true"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L10 4l7 5.5V16a1 1 0 0 1-1 1h-3.5v-4.5h-5V17H4a1 1 0 0 1-1-1z"/></svg>Inicio</button><button role="tab" data-v="ventas" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10v14l-2.5-1.5L10 17l-2.5-1.5L5 17zM8 7h4M8 10h4"/></svg>Ventas</button><button role="tab" data-v="historial" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14M7 2.5v3M13 2.5v3"/></svg>Historial</button>
-          <div class="gt">Publicidad</div><button role="tab" data-v="publicidad" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8v4h3l6 4V4L6 8zM15 7.5a3.5 3.5 0 0 1 0 5"/></svg>Anuncios</button>
-          <button role="tab" data-v="full" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5l7 3.5v8l-7 3.5L3 14V6zM3 6l7 3.5L17 6M10 9.5v8"/></svg><span class="lb">Mandar a Full</span><span class="ls">Full</span></button>
-          <button role="tab" data-v="costos" aria-selected="false"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5V4a1 1 0 0 1 1-1h6.5L17 9.5 10.5 16z"/><circle cx="7" cy="7" r="1.2"/></svg>Productos</button>
-          <div class="acct"><span class="av">BC</span><span>Bazar Central<small>Cuenta de ejemplo</small></span></div>
-        </aside>
-        <div class="main">
-          <div class="top">
-            <h3 id="vt">Inicio</h3>
-            <div class="sbx" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar ventas o pantallas…<kbd>Ctrl K</kbd></div>
-            <div class="r"><span class="act"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="m6.8 10.2 2.2 2.2 4.2-4.6"/></svg>Datos actualizados</span><span class="tagx">Datos de ejemplo</span><span class="st"><i></i><span id="hora">14:35</span></span></div>
-          </div>
-          <div class="body" id="body">
-
-            <section class="view on" data-view="inicio" aria-label="Inicio">
-              <div class="i2">
-                <div class="i2h"><b>Hoy</b><span class="c">comparado con ayer a esta hora</span><span class="fch"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3.5 5h13v12h-13zM3.5 9h13M7 3v4M13 3v4"/></svg>Hoy, 12 nov</span></div>
-                <div class="tgrid" id="tgrid" role="group" aria-label="Métricas de hoy"></div>
-                <div class="i2s"><div class="sh"><b>Para mirar hoy</b><span class="n num" id="pmN"></span></div><div class="pmg" id="pmg"></div></div>
-                <div class="i2s"><div class="sh"><i aria-hidden="true"></i><b>Últimas ventas</b><span>en vivo</span></div>
-                  <div class="uvw"><table class="tbl uvt" aria-label="Últimas ventas"><thead><tr><th class="l">Producto</th><th class="hs">Logística</th><th class="hm">Hora</th><th class="hm">Facturación</th><th class="hs">Cobrado neto</th><th>Ganancia</th><th>Margen</th></tr></thead><tbody id="uvb"></tbody></table></div>
-                </div>
-              </div>
-            </section>
-
-            <section class="view" data-view="ventas" aria-label="Ventas">
-              <div class="bar1">
-                <div class="chips" id="vchips" role="group" aria-label="Filtrar ventas"></div>
-                <span class="mut" style="font-size:12px">Tocá una venta para ver su cuenta</span>
-              </div>
-              <table class="tbl" aria-label="Ventas de hoy">
-                <thead><tr><th class="l hm">Hora</th><th class="l">Producto</th><th class="hs">Unid.</th><th class="hm">Precio</th><th>Ganancia</th><th>Margen</th><th class="hs">Markup</th></tr></thead>
-                <tbody id="vbody"></tbody>
-              </table>
-            </section>
-
-            <section class="view" data-view="publicidad" aria-label="Publicidad">
-              <div class="bands" id="bands" role="group" aria-label="Reparto de tu inversión"></div>
-              <div class="alerta" id="adalerta"></div>
-              <table class="tbl" aria-label="Anuncios">
-                <thead><tr><th class="l">Anuncio</th><th class="hm">Facturación</th><th>Publicidad</th><th>Ganancia real</th><th class="hs">ROAS real</th></tr></thead>
-                <tbody id="abody"></tbody>
-              </table>
-            </section>
-
-            <section class="view" data-view="full" aria-label="Mandar a Full">
-              <div class="fullh">
-                <div><div style="font-size:12px;color:var(--mut);font-weight:500;margin-bottom:6px">Cubrir</div><div class="seg" id="fdias" role="group" aria-label="Días a cubrir"><button aria-pressed="false" data-d="15">15 días</button><button aria-pressed="true" data-d="30">30 días</button><button aria-pressed="false" data-d="45">45 días</button></div></div>
-                <span class="mut" style="font-size:12px">Según lo que vendés por Full y tu stock en Full</span>
-              </div>
-              <div class="strip" id="fstrip"></div>
-              <table class="tbl" aria-label="Qué mandar a Full">
-                <thead><tr><th class="l">Producto</th><th>Mandar</th><th class="hs">Vende por día</th><th class="hm">Hoy en Full</th><th>Le alcanza</th></tr></thead>
-                <tbody id="fbody"></tbody>
-              </table>
-            </section>
-
-            <section class="view" data-view="historial" aria-label="Historial">
-              <div class="card" style="padding:16px">
-                <div class="bar1"><b style="font-size:14px">Noviembre: facturación y ganancia real de cada día</b><div class="legend"><span><i style="background:var(--cian)"></i>Facturación</span><span><i style="background:var(--up)"></i>Ganancia real</span></div></div>
-                <div class="hcols" id="hcols"></div>
-                <div class="haxis"><span>1 nov</span><span>6 nov</span><span>12 nov, hoy</span></div>
-                <div class="casc" id="casc"></div>
-              </div>
-            </section>
-
-            <section class="view" data-view="costos" aria-label="Costos">
-              <div class="tipcost"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5M10 6.5v.01"/></svg>Probá cambiar un costo: la ganancia se recalcula en toda la demo, al instante.</div>
-              <table class="tbl" aria-label="Costo de cada producto">
-                <thead><tr><th class="l">Producto</th><th title="Costo sin IVA, en dólares">Costo US$</th><th class="hs">IVA</th><th class="hm">En pesos</th><th>Ganancia</th></tr></thead>
-                <tbody id="cbody"></tbody>
-              </table>
-            </section>
-
-          </div>
-          <aside class="drawer" id="drawer" aria-label="Detalle de la venta" aria-hidden="true">
-            <div class="dh"><div><b id="dtit">Venta</b><small id="dsub"></small></div><button class="x" id="dx" aria-label="Cerrar el detalle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg></button></div>
-            <div class="db" id="dbody"></div>
-          </aside>
-          <div class="toast" id="toast" role="status" aria-live="polite"><i></i><span id="toastt"></span></div>
-        </div>
-      </div>
-    </div>
-    <div class="reflejo" aria-hidden="true"></div>
-  </div>
-
-  <div class="cinta" aria-label="Lo que le descontamos a cada venta">
-    <div class="tr" id="cinta"></div>
-  </div>
-  <p class="sf-note wrap">Smart Metrics es un desarrollo de SmartFull, MercadoLíder Platinum con más de 70.000 ventas por año. Lo hicimos para nuestra cuenta antes que para la tuya.</p>
-</section>
 
 <section class="sec" id="precios" style="padding-top:40px" aria-labelledby="t-precios">
   <div class="wrap rv">
@@ -1498,8 +1510,8 @@ window.addEventListener('scroll', scroll2, {passive:true}); window.addEventListe
 /* ---------- indicador de que sigue abajo: se va apenas se baja ---------- */
 (function(){ var c = document.querySelector('.scue'); if (!c) return;
   /* aparece cuando los botones del hero ya quedaron por encima de ella (no los tapa nunca)
-     y sigue insistiendo mientras se baja, hasta que llegan las preguntas */
-  var b = document.querySelector('.hero .cta'), dest = document.getElementById('margen');
+     y sigue insistiendo mientras se baja, hasta que llega la demo */
+  var b = document.querySelector('.hero .cta'), dest = document.getElementById('demo');
   function v(){ var r = b ? b.getBoundingClientRect() : null, d = dest ? dest.getBoundingClientRect() : null;
     var libre = !r || r.bottom < innerHeight - 90;
     var falta = !d || d.top > innerHeight * 0.55;
