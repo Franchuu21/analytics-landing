@@ -433,6 +433,13 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 .pie{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .pie nav{display:flex;gap:26px;flex-wrap:wrap}
 .pie a:hover{color:var(--ink)}
+.mails{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.mails div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.mails span{font-size:13px;color:var(--mut)}
+.mails a{color:var(--t2);font-weight:500;overflow-wrap:anywhere}
+.mails a:hover{color:var(--ink)}
+@media (max-width:760px){.mails{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.mails{grid-template-columns:1fr}}
 
 @media (max-width:1080px){
   .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -1093,7 +1100,7 @@ section[id],#demo{scroll-margin-top:72px}
       </div>
     </div>
     <p class="prueba">Probás 7 días gratis con todo lo de Advanced. Después elegís el plan y pagás por transferencia. Hasta 50 ventas por mes es gratis.</p>
-    <p class="nota">¿Vendés más de 15.000 por mes o tenés varias cuentas de Mercado Libre? <a href="mailto:contacto@smartmetrics.com.ar?subject=Plan%20a%20medida%20de%20Smart%20Metrics" id="aMedida">Escribinos</a> y armamos un plan a tu medida.</p>
+    <p class="nota">¿Vendés más de 15.000 por mes o tenés varias cuentas de Mercado Libre? <a href="mailto:ventas@smartmetrics.com.ar?subject=Plan%20a%20medida%20de%20Smart%20Metrics" id="aMedida">Escribinos a ventas@smartmetrics.com.ar</a> y armamos un plan a tu medida.</p>
   </div>
 </section>
 
@@ -1109,9 +1116,17 @@ section[id],#demo{scroll-margin-top:72px}
 </main>
 
 <footer>
-  <div class="wrap pie">
+  <div class="wrap">
+  <nav class="mails" aria-label="Contacto">
+    <div><span>Consultas</span><a href="mailto:hola@smartmetrics.com.ar">hola@smartmetrics.com.ar</a></div>
+    <div><span>Ayuda con la app</span><a href="mailto:soporte@smartmetrics.com.ar">soporte@smartmetrics.com.ar</a></div>
+    <div><span>Pagos y facturas</span><a href="mailto:facturacion@smartmetrics.com.ar">facturacion@smartmetrics.com.ar</a></div>
+    <div><span>Planes a medida</span><a href="mailto:ventas@smartmetrics.com.ar">ventas@smartmetrics.com.ar</a></div>
+  </nav>
+  <div class="pie">
     <span>Smart Metrics es un desarrollo de <b style="color:var(--t2);font-weight:600">SmartFull</b> · Buenos Aires · © 2026</span>
-    <nav aria-label="Legales"><a href="https://app.smartmetrics.com.ar/terminos">Términos y condiciones</a><a href="https://app.smartmetrics.com.ar/privacidad">Política de privacidad</a><a href="mailto:contacto@smartmetrics.com.ar">Contacto</a></nav>
+    <nav aria-label="Legales"><a href="https://app.smartmetrics.com.ar/terminos">Términos y condiciones</a><a href="https://app.smartmetrics.com.ar/privacidad">Política de privacidad</a><a href="mailto:hola@smartmetrics.com.ar">Contacto</a></nav>
+  </div>
   </div>
 </footer>
 
