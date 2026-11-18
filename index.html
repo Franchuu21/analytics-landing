@@ -790,6 +790,18 @@ section[id],#demo{scroll-margin-top:72px}
   .i2h .c{order:3;width:100%}
 }
 </style>
+<!-- Meta Pixel · Smart Metrics -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1475905767968306');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1475905767968306&ev=PageView&noscript=1"></noscript>
+<!-- /Meta Pixel -->
 </head>
 <body>
 
@@ -1822,6 +1834,39 @@ document.querySelectorAll('[data-mon]').forEach(function(b){
   b.addEventListener('click', function(){ mon = b.dataset.mon; document.querySelectorAll('[data-mon]').forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); }); pintarPrecio(); });
 });
 pintarPrecio();
+})();
+</script>
+<script>
+/* Medición: eventos del píxel y utm hacia la app */
+(function(){
+  var KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'];
+  var q=new URLSearchParams(location.search), utm={};
+  try{ var guardado=JSON.parse(sessionStorage.getItem('sm_utm')||'{}'); for(var k in guardado) utm[k]=guardado[k]; }catch(e){}
+  KEYS.forEach(function(k){ if(q.get(k)) utm[k]=q.get(k); });
+  try{ sessionStorage.setItem('sm_utm',JSON.stringify(utm)); }catch(e){}
+  function ev(){ if(window.fbq) fbq.apply(null,arguments); }
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h=a.getAttribute('href');
+    if(h.indexOf('https://app.smartmetrics.com.ar')===0){
+      var u=new URL(h);
+      for(var k in utm) if(!u.searchParams.has(k)) u.searchParams.set(k,utm[k]);
+      if(u.hash){ var hs=u.hash; u.hash=''; a.href=u.toString()+hs; } else a.href=u.toString();
+      var crear=h.indexOf('#crear')>-1;
+      a.addEventListener('click',function(){
+        if(crear) ev('track','Lead',{content_name:(a.id||a.textContent.trim()).slice(0,60)});
+        else ev('trackCustom','ClicIngresar');
+      });
+    } else if(h.indexOf('https://wa.me/')===0){
+      a.addEventListener('click',function(){ ev('track','Contact',{content_name:'WhatsApp'}); });
+    } else if(h.indexOf('mailto:')===0){
+      a.addEventListener('click',function(){ ev('track','Contact',{content_name:h.slice(7).split('?')[0]}); });
+    }
+  });
+  var hitos={50:false,90:false};
+  window.addEventListener('scroll',function(){
+    var d=document.documentElement, pct=(window.scrollY+innerHeight)/d.scrollHeight*100;
+    [50,90].forEach(function(n){ if(!hitos[n]&&pct>=n){ hitos[n]=true; ev('trackCustom','Scroll'+n); } });
+  },{passive:true});
 })();
 </script>
 </body>
