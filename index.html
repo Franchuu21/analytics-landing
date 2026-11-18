@@ -802,6 +802,13 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1475905767968306&ev=PageView&noscript=1"></noscript>
 <!-- /Meta Pixel -->
+<!-- Microsoft Clarity · Smart Metrics -->
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfljqutc8q");
+</script>
+<!-- /Microsoft Clarity -->
 </head>
 <body>
 
@@ -1844,7 +1851,16 @@ pintarPrecio();
   try{ var guardado=JSON.parse(sessionStorage.getItem('sm_utm')||'{}'); for(var k in guardado) utm[k]=guardado[k]; }catch(e){}
   KEYS.forEach(function(k){ if(q.get(k)) utm[k]=q.get(k); });
   try{ sessionStorage.setItem('sm_utm',JSON.stringify(utm)); }catch(e){}
-  function ev(){ if(window.fbq) fbq.apply(null,arguments); }
+  var CL={Lead:'probar_gratis',Contact:'contacto',ClicIngresar:'ingresar',Scroll50:'scroll_50',Scroll90:'scroll_90'};
+  function ev(kind,name,params){
+    if(window.fbq) fbq(kind,name,params||{});
+    if(window.clarity){
+      var n=CL[name]||name;
+      if(params&&params.content_name){ n+= (name==='Contact' ? '_'+(params.content_name==='WhatsApp'?'whatsapp':'mail') : ''); }
+      clarity('event',n);
+    }
+  }
+  if(window.clarity){ for(var k in utm){ try{ clarity('set',k,String(utm[k])); }catch(e){} } }
   document.querySelectorAll('a[href]').forEach(function(a){
     var h=a.getAttribute('href');
     if(h.indexOf('https://app.smartmetrics.com.ar')===0){
